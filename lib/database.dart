@@ -41,6 +41,7 @@ class TaskDatabase {
   //obtener tareas
 
   Future<List<Task>?> getAllTasks() async {
+    //consulta de tabla
     List<Map<String, dynamic>> results = await _db.query("tasks");
     if (results.length > 0) {
       var res = results.map((map) => Task.fromMap(map)).toList();
